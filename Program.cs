@@ -31,7 +31,7 @@ while (exibirMenu)
     {
         case "1":
             es.AdicionarVeiculo();
-            breal;
+            break;
 
         case "2":
             es.RemoverVeiculo();
