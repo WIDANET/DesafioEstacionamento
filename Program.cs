@@ -26,22 +26,23 @@ while (exibirMenu)
     Console.WriteLine("[2] - Remover veículo");
     Console.WriteLine("[3] - Listar veículos");
     Console.WriteLine("[4] - Finalizar programa");
+    int escolha = Convert.ToInt32(Console.ReadLine());
 
-    switch(Console.ReadLine())
+    switch(escolha)
     {
-        case "1":
+        case 1:
             es.AdicionarVeiculo();
             break;
 
-        case "2":
+        case 2:
             es.RemoverVeiculo();
             break;
 
-        case "3":
+        case 3:
             es.ListarVeiculos();
             break;
 
-        case "4":
+        case 4:
             exibirMenu = false;
             break;
 
@@ -50,6 +51,15 @@ while (exibirMenu)
             break;
     }
 
-    Console.WriteLine("Pressione enter para continuar");
-    Console.ReadLine();
+    if (escolha != 4)
+    {
+        Console.WriteLine("Pressione enter para continuar");
+        Console.ReadLine();
+    }
+    else
+    {
+        Console.WriteLine("Programa encerrado.");
+    }
+
+    
 }
