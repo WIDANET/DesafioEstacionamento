@@ -17,13 +17,14 @@ namespace DesafioEstacionamento.Models
     {
         this.precoInicial = precoInicial;
         this.precoPorHora = precoPorHora;
+
+        
     }
 
     public void AdicionarVeiculo()
     {
         Console.WriteLine("Digite a placa do veículo para estacionar: ");
-        string add = Console.ReadLine();
-        veiculos.Add(add);
+        veiculos.Add(Console.ReadLine());
 
     }
 
