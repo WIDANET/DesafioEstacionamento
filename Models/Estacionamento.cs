@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
@@ -21,6 +22,8 @@ namespace DesafioEstacionamento.Models
     public void AdicionarVeiculo()
     {
         Console.WriteLine("Digite a placa do veículo para estacionar: ");
+        string add = Console.ReadLine();
+        veiculos.Add(add);
 
     }
 
@@ -28,18 +31,16 @@ namespace DesafioEstacionamento.Models
     {
         Console.WriteLine("Digite a placa do veículo para remover: ");
 
-
-        string placa = "";
+        string placa = Console.ReadLine();
 
             if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
         {
             Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado: ");
-            
-
-            int horas = 0;
-            decimal valorTotal = 0;
+            int horas = Convert.ToInt32(Console.ReadLine());
+            decimal valorTotal = precoInicial + (horas * precoPorHora);
 
             Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de R$ {valorTotal}");
+            veiculos.Remove(placa);
 
         }
         else
@@ -54,6 +55,10 @@ namespace DesafioEstacionamento.Models
        if (veiculos.Any()) 
        {
         Console.WriteLine("Os veículos são:");
+        foreach(string Total in veiculos)
+        {
+            Console.WriteLine(Total);
+        }
        }
        else
        {
