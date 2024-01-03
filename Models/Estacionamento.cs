@@ -53,7 +53,7 @@ namespace DesafioEstacionamento.Models
 
     public void ListarVeiculos()
     {
-       if (veiculos.Any()) 
+       if (veiculos != null == veiculos.Any()) 
        {
         Console.WriteLine("Os veículos são:");
         foreach(string Total in veiculos)
